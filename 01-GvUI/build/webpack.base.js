@@ -31,21 +31,19 @@ module.exports = {
         }
     },
     entry: {
-        index: ['@babel/polyfill', path.join(__dirname, '../src/main.js')],
-        other: path.join(__dirname, '../src/other.js')
+        index: ['@babel/polyfill', path.join(__dirname, '../src/index.js')],
     },
     output: {
         path: path.join(__dirname, '../dist'),
-        filename: '[name].[contenthash:8].js'
+        // filename: '[name].[contenthash:8].js'
+        filename: 'my-lib.js', 
+        libraryTarget: 'umd',  //用到的模块定义规范
+        library: 'myLib',   //库的名字
     },
     plugins: [
         new htmlWebpackPlugin({
             template: path.join(__dirname, '../src/index.html'),
             filename: 'index.html',
-        }),
-        new htmlWebpackPlugin({
-            template: path.join(__dirname, '../src/other.html'),
-            filename: 'other.html',
         }),
         // new CleanWebpackPlugin(),
         // 代码备注
