@@ -34,9 +34,9 @@ export default {
     // 使用插件
     typescript({
       // 导出类型声明文件
-      outDir: "dist",
-      declaration: true,
-      declarationDir: "dist",
+      // outDir: "dist",
+      // declaration: true,
+      // declarationDir: "dist",
     }),
     resolve(),
     commonjs(),
