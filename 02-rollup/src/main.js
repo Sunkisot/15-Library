@@ -1,5 +1,6 @@
 import sayHello from "@/packages/method";
 import Greeter from "@/packages/tsMethod";
+import Hello from '@/packages/hello.vue'
 import '@/styles/index.css'
 // import _ from "lodash";
 const greeter = new Greeter();
@@ -10,3 +11,9 @@ document.getElementById("container").innerHTML = container;
 
 const arr = _.concat([1, 2, 3], 4, [5]);
 // sayHello("hello world" + arr);
+
+function install(Vue) {
+  Vue.component('Hello', Hello)
+}
+
+export default install
